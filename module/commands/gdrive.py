@@ -1,5 +1,6 @@
 """/drive command"""
 import os, yaml
+from pydrive.files import GoogleDriveFile
 from pydrive.auth import AuthError, GoogleAuth
 from pydrive.drive import GoogleDrive
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
@@ -151,7 +152,23 @@ def drive_contribute(update: Update, context: CallbackContext):
         )
         return
 
+    email = args[0]
+    reason = ' '.join(args[1:])
+
     context.bot.sendMessage(
         chat_id=config_map["dev_group_chatid"],
-        text=f"L'utente {first_name} (Username: {username}, E-mail: {args[0]}) vuole avere accesso in scrittura a Drive per il seguente motivo:\n\n{' '.join(args[1:])}"
+        text=f"L'utente {first_name} (Username: {username}, E-mail: {email}) vuole avere accesso in scrittura a Drive per il seguente motivo:\n\n{reason}"
     )
+
+    gauth = GoogleAuth(settings_file="config/settings.yaml")
+    gauth.CommandLineAuth()
+    gdrive = GoogleDrive(gauth)
+
+    drive_root_folder = gdrive.CreateFile({'id': config_map['drive_folder_id']})
+    drive_root_folder.FetchMetadata(fields='permissions')
+    drive_root_folder.InsertPermission({
+        'type': 'user',
+        'emailAddress': email,
+        'value': email,
+        'role': 'writer'
+    })
