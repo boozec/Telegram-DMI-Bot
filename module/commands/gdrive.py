@@ -133,3 +133,25 @@ def get_files_keyboard(file_list: list, row_len: int = 2) -> list:
         else:  # the current element has an odd index
             keyboard[i // row_len].append(InlineKeyboardButton(icona + file2['title'], callback_data="drive_file_" + file2['id']))
     return keyboard
+
+def drive_contribute(update: Update, context: CallbackContext):
+    args = context.args
+    chat_id = update.message.chat_id
+    first_name = update.message.from_user.first_name
+    username = update.message.from_user.username
+    if username:
+        username = f"@{username}"
+    else:
+        username = "Nessuno username"
+
+    if len(args) < 2:
+        context.bot.sendMessage(
+            chat_id=chat_id, 
+            text="USO: /drive_contribute [e-mail] [motivazione]\n\nESEMPIO: /drive_contribute mario.rossi@gmail.com Vorrei caricare i miei appunti di Fondamenti di Informatica", 
+        )
+        return
+
+    context.bot.sendMessage(
+        chat_id=config_map["dev_group_chatid"],
+        text=f"L'utente {first_name} (Username: {username}, E-mail: {args[0]}) vuole avere accesso in scrittura a Drive per il seguente motivo:\n\n{' '.join(args[1:])}"
+    )

@@ -12,7 +12,7 @@ from module.commands.start import start
 from module.commands.stats import stats, stats_tot
 from module.commands.help import help_cmd
 from module.commands.report import report
-from module.commands.gdrive import drive, drive_handler
+from module.commands.gdrive import drive, drive_contribute, drive_handler
 from module.commands.regolamento_didattico import regolamentodidattico, regolamentodidattico_handler, send_regolamento
 from module.easter_egg_func import bladrim, lei_che_ne_pensa_signorina, prof_sticker, santino, smonta_portoni
 from module.gitlab import git, gitlab_handler
@@ -146,6 +146,7 @@ def add_handlers(dp: Dispatcher):
     # drive and gitlab commands
     if config_map['debug']['disable_drive'] == 0:
         dp.add_handler(CommandHandler('drive', drive))
+        dp.add_handler(CommandHandler('drive_contribute', drive_contribute))
 
     if config_map['debug']['disable_gitlab'] == 0:
         dp.add_handler(CommandHandler('git', git))
