@@ -37,8 +37,16 @@ def generate_prof_text(names: list) -> str:
         return "La sintassi del comando è: /prof <nomeprofessore>\n"
 
     professors = set()
-    for name in names:
-        professors.update(Professor.find(where_name=name))
+    names_number = len(names)
+    s_names = [].append(names[0])
+
+    if names_number > 1:
+        for name in names[1:-1]:
+            s_names.append('{0} '.format(name))
+           
+        s_names.append(' {0}'.format(names[names_number - 1]))
+
+    professors.update(Professor.find(where_name=s_names))
 
     if len(professors) > 0:
         output_str = '\n'.join(map(str, professors))
