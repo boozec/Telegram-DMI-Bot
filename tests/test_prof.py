@@ -1,3 +1,5 @@
+from time import sleep
+
 import pytest
 from telethon.sync import TelegramClient
 from telethon.tl.custom.conversation import Conversation
@@ -29,3 +31,5 @@ async def test_prof_cmd(client: TelegramClient):
             resp: Message = await conv.get_response()
 
             assert resp.text
+
+            sleep(2)
