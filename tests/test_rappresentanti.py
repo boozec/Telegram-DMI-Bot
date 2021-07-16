@@ -44,16 +44,21 @@ async def test_rappresentanti_buttons(client: TelegramClient):
             "md_rappresentanti_matematica",
         )
 
+        resp: Message
         for button in buttons:
-            await conv.send_message("/help")  # send a command
-            resp: Message = await conv.get_response()
-
+            # Open the `rappresentanti` menu into the `/help` menu
+            await conv.send_message("/help")
+            resp = await conv.get_response()
             assert resp.text
 
-            await resp.click(data="sm_rapp_menu")  # click the "👥 Rappresentanti" button
-            resp: Message = await conv.get_edit()
+            await resp.click(data="sm_help_dip_cdl")
+            resp = await conv.get_edit()
+            assert resp.text
+
+            await resp.click(data="sm_rapp_menu")
+            resp = await conv.get_edit()
+            assert resp.text
 
             await resp.click(data=button)
-            resp: Message = await conv.get_edit()
-
+            resp = await conv.get_edit()
             assert resp.text
