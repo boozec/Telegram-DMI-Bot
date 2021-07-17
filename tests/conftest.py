@@ -15,9 +15,9 @@ warnings.filterwarnings(
     message="If 'per_message=False', 'CallbackQueryHandler' will not be tracked for every message.",
 )
 
-api_id = config_map["test"]["api_id"]
-api_hash = config_map["test"]["api_hash"]
-session = config_map["test"]["session"]
+api_id = config_map['test']['api_id']
+api_hash = config_map['test']['api_hash']
+session = config_map['test']['session']
 
 
 def get_session():
@@ -49,13 +49,13 @@ async def bot():
         None: wait for the testing session to end
     """
     print("[info] started telegram bot")
-    for test_key in config_map["test"]:
+    for test_key in config_map['test']:
         if test_key in config_map:
-            config_map[test_key] = config_map["test"][test_key]
+            config_map[test_key] = config_map['test'][test_key]
 
     updater = Updater(
-        config_map["token"],
-        request_kwargs={"read_timeout": 20, "connect_timeout": 20},
+        config_map['token'],
+        request_kwargs={'read_timeout': 20, 'connect_timeout': 20},
         use_context=True,
     )
     add_handlers(updater.dispatcher)

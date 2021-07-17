@@ -17,7 +17,7 @@ async def test_help_buttons(client: TelegramClient):
     conv: Conversation
     async with client.conversation(bot_tag, timeout=TIMEOUT) as conv:
         buttons = {
-            "sm_help_dip_cdl": [
+            'sm_help_dip_cdl': [
                 "md_esami_link",
                 "sm_aulario",
                 "md_lezioni_link",
@@ -26,20 +26,20 @@ async def test_help_buttons(client: TelegramClient):
                 "md_biblioteca",
                 "md_gruppi",
             ],
-            "reg_button_home": [],  # tested by `/regolamentodidattico`
-            "sm_help_segr": ["md_sdidattica", "md_studenti", "md_cea"],
-            "sm_help_ersu": [
+            'reg_button_home': [],  # tested by `/regolamentodidattico`
+            'sm_help_segr': ["md_sdidattica", "md_studenti", "md_cea"],
+            'sm_help_ersu': [
                 "md_ersu",
                 "md_ufficioersu",
                 "md_urp",
             ],
-            "sm_help_misc": ["md_drive", "md_gitlab"],
-            "sm_help_projects_acknowledgements": [
+            'sm_help_misc': ["md_drive", "md_gitlab"],
+            'sm_help_projects_acknowledgements': [
                 "md_opismanager",
                 "md_contributors",
             ],
-            "md_help": [],
-            "exit_cmd": [],
+            'md_help': [],
+            'exit_cmd': [],
         }
 
         resp: Message
