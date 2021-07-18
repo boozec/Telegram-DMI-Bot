@@ -19,7 +19,10 @@ async def test_report_cmd(client: TelegramClient):
         await conv.send_message("/report")  # send a command
         resp: Message = await conv.get_response()
 
-        assert resp.text
+        assert (
+            resp.text
+            == 'Errore. Inserisci la tua segnalazione dopo /report (Ad esempio /report Invasione ingegneri in corso.)'
+        )
 
         commands = ("/report Test", "/report Test Report")
 

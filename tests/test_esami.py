@@ -19,21 +19,21 @@ async def test_esami_cmd(client: TelegramClient):
         await conv.send_message("/esami")  # send a command
         resp: Message = await conv.get_response()
 
-        assert resp.text
+        assert resp.text == 'Anno: tutti\nSessione: tutti\nInsegnamento: tutti'
 
-        buttons = (
-            "sm_esami_button_anno",
-            "esami_button_anno_1° anno",
-            "sm_esami_button_sessione",
-            "esami_button_sessione_prima",
-            "sm_esami_button_insegnamento",
-        )
+        buttons = {
+            'sm_esami_button_anno': 'Seleziona l\'anno che ti interessa',
+            'esami_button_anno_1° anno': 'Anno: 1° anno\nSessione: tutti\nInsegnamento: tutti',
+            'sm_esami_button_sessione': 'Seleziona la sessione che ti interessa',
+            'esami_button_sessione_prima': 'Anno: 1° anno\nSessione: prima\nInsegnamento: tutti',
+            'sm_esami_button_insegnamento': 'Inserire l\'insegnamento desiderato nel formato:\nins: nome insegnamento\nEsempio:\nins: SisTeMi oPeRaTIvI',
+        }
 
-        for button in buttons:
+        for button, expected_test in buttons.items():
             await resp.click(data=button)  # click the button
             resp: Message = await conv.get_edit()
 
-            assert resp.text
+            assert resp.text == expected_test
 
         await conv.send_message("ins: programmazione")  # send a message
         resp: Message = await conv.get_response()

@@ -38,14 +38,14 @@ async def test_rappresentanti_buttons(client: TelegramClient):
     """
     conv: Conversation
     async with client.conversation(bot_tag, timeout=TIMEOUT) as conv:
-        buttons = (
-            "md_rappresentanti_dmi",
-            "md_rappresentanti_informatica",
-            "md_rappresentanti_matematica",
-        )
+        buttons = {
+            'md_rappresentanti_dmi': '**Rappresentanti DMI**',
+            'md_rappresentanti_informatica': '**Rappresentanti Corso di Laurea Triennale**',
+            'md_rappresentanti_matematica': '**Rappresentanti Corso di Laurea Triennale**',
+        }
 
         resp: Message
-        for button in buttons:
+        for button, expected_text in buttons.items():
             # Open the `rappresentanti` menu into the `/help` menu
             await conv.send_message("/help")
             resp = await conv.get_response()
@@ -61,4 +61,5 @@ async def test_rappresentanti_buttons(client: TelegramClient):
 
             await resp.click(data=button)
             resp = await conv.get_edit()
-            assert resp.text
+
+            assert resp.text.startswith(expected_text)

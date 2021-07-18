@@ -18,4 +18,6 @@ async def test_start_cmd(client: TelegramClient):
         await conv.send_message("/start")  # send a command
         resp: Message = await conv.get_response()
 
-        assert resp.text
+        assert resp.text.startswith(
+            'Benvenuto! Questo bot è stato realizzato dagli studenti del Corso di Laurea in Informatica al fine di suppotare gli studenti del DMI!'
+        )
