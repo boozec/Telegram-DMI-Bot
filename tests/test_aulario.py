@@ -1,3 +1,4 @@
+import calendar
 from datetime import datetime
 
 import pytest
@@ -26,12 +27,30 @@ async def test_aulario_cmd(client: TelegramClient):
         if "⚠️" in resp.text:
             return
 
-        await resp.click(text="{}".format(datetime.now().day))  # click the button
-        resp: Message = await conv.get_response()
+        now = datetime.now()
 
+        await resp.click(text=f"{now.day}")  # click the button
+        resp: Message = await conv.get_response()
         assert resp.text
 
         await resp.click(data="sm_aulario")  # click the button
-        resp: Message = await conv.get_edit()
+        resp = await conv.get_edit()
+        assert resp.text
 
+        await resp.click(
+            text="{} ▶️".format(calendar.month_name[((now.month % 12) + 1)])
+        )
+        resp = await conv.get_edit()
+        assert resp.text
+
+        await resp.click(
+            text="{} ▶️".format(calendar.month_name[((now.month % 12) + 2)])
+        )
+        resp = await conv.get_edit()
+        assert resp.text
+
+        await resp.click(
+            text="◀️ {}".format(calendar.month_name[((now.month % 12) + 1)])
+        )
+        resp = await conv.get_edit()
         assert resp.text
