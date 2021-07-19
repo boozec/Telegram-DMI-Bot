@@ -55,7 +55,7 @@ async def test_rappresentanti_buttons(client: TelegramClient):
             resp = await conv.get_edit()
             assert resp.text
 
-            await resp.click(data="sm_rapp_menu")
+            await resp.click(data="sm_help_rapp_menu")
             resp = await conv.get_edit()
             assert resp.text
 

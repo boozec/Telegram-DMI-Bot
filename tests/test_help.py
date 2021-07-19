@@ -22,7 +22,7 @@ async def test_help_buttons(client: TelegramClient):
                 "sm_aulario",
                 "md_lezioni_link",
                 "md_professori",
-                "sm_rapp_menu",
+                "sm_help_rapp_menu",
                 "md_biblioteca",
                 "md_gruppi",
             ],
