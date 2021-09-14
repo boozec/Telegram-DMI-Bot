@@ -20,10 +20,10 @@ async def test_aulario_cmd(client: TelegramClient):
         await conv.send_message("/aulario")  # send a command
         resp: Message = await conv.get_response()
 
-        assert resp.text == 'Seleziona la data della lezione che ti interessa.'
-
         if "⚠️" in resp.text:
             return
+
+        assert resp.text == 'Seleziona la data della lezione che ti interessa.'
 
         now = datetime.now()
 
