@@ -15,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -101,13 +102,13 @@
            <div itemprop="articleBody">
              
   <section id="commands-package">
-<h1>Commands package<a class="headerlink" href="#commands-package" title="Permalink to this headline"></a></h1>
+<h1>Commands package<a class="headerlink" href="#commands-package" title="Permalink to this heading"></a></h1>
 <section id="module-module.commands">
-<span id="description"></span><h2><strong>Description</strong><a class="headerlink" href="#module-module.commands" title="Permalink to this headline"></a></h2>
+<span id="description"></span><h2><strong>Description</strong><a class="headerlink" href="#module-module.commands" title="Permalink to this heading"></a></h2>
 <p>All the commands the bot will react to</p>
 </section>
 <section id="module-module.commands.aulario">
-<span id="aulario"></span><h2>aulario<a class="headerlink" href="#module-module.commands.aulario" title="Permalink to this headline"></a></h2>
+<span id="aulario"></span><h2>aulario<a class="headerlink" href="#module-module.commands.aulario" title="Permalink to this heading"></a></h2>
 <p>Aulario command</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="module.commands.aulario.aulario">
@@ -123,6 +124,9 @@ Shows the calendar to the user to allow him to select a day from the calendar</p
 <li><p><strong>message_id</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – id of the message. Defaults to None.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -137,6 +141,9 @@ Show the list of subject for the day</p>
 <li><p><strong>update</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Update</span></code>) – update event</p></li>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -196,7 +203,6 @@ Generates the keyboard that lists all the subjects for the selected date</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>page</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – page of the subject selector</p></li>
 <li><p><strong>day</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – day</p></li>
-<li><p><strong>daily_slots</strong> – list of timetable slots</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -220,6 +226,9 @@ Updates the calendar</p>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -234,6 +243,9 @@ Shows the next or previous page</p>
 <li><p><strong>update</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Update</span></code>) – update event</p></li>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -250,12 +262,15 @@ Shows more information on the subject selected</p>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
 </section>
 <section id="module-module.commands.esami">
-<span id="esami"></span><h2>esami<a class="headerlink" href="#module-module.commands.esami" title="Permalink to this headline"></a></h2>
+<span id="esami"></span><h2>esami<a class="headerlink" href="#module-module.commands.esami" title="Permalink to this heading"></a></h2>
 <p>/esami command</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="module.commands.esami.esami">
@@ -268,6 +283,9 @@ Shows the options available to execute an exam query.</p>
 <li><p><strong>update</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Update</span></code>) – update event</p></li>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -286,6 +304,9 @@ Allows the user to choose an year among the ones proposed</p>
 <li><p><strong>message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the sub-menu message</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -303,6 +324,9 @@ Allows the user to write the subject they want to search for</p>
 <li><p><strong>message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the sub-menu message</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -319,6 +343,9 @@ Allows the user to choose a session among the ones proposed</p>
 <li><p><strong>chat_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the chat of the user</p></li>
 <li><p><strong>message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the sub-menu message</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -340,6 +367,9 @@ The action will change depending on the button:</p>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -355,17 +385,23 @@ Allows the user to input the wanted subject, in the format [Ii]ns: &lt;insegname
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="module.commands.esami.generate_esami_text">
-<span class="sig-prename descclassname"><span class="pre">module.commands.esami.</span></span><span class="sig-name descname"><span class="pre">generate_esami_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.esami.generate_esami_text" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">module.commands.esami.</span></span><span class="sig-name descname"><span class="pre">generate_esami_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.esami.generate_esami_text" title="Permalink to this definition"></a></dt>
 <dd><p>Called by <a class="reference internal" href="#module.commands.esami.esami" title="module.commands.esami.esami"><code class="xref py py-meth docutils literal notranslate"><span class="pre">esami()</span></code></a> after the search button in the /esami command has been pressed.
 Executes the query and returns the text to send to the user</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>user_dict</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – dictionary that stores the user selected parameters to use in the query</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>locale</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – user’s language</p></li>
+<li><p><strong>user_dict</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – dictionary that stores the user selected parameters to use in the query</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
@@ -378,17 +414,17 @@ Executes the query and returns the text to send to the user</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="module.commands.esami.get_esami_text_inline_keyboard">
-<span class="sig-prename descclassname"><span class="pre">module.commands.esami.</span></span><span class="sig-name descname"><span class="pre">get_esami_text_inline_keyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.esami.get_esami_text_inline_keyboard" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">module.commands.esami.</span></span><span class="sig-name descname"><span class="pre">get_esami_text_inline_keyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.esami.get_esami_text_inline_keyboard" title="Permalink to this definition"></a></dt>
 <dd><p>Generates the text and the InlineKeyboard for the /esami command, based on the current parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>update</strong> – update event</p></li>
+<li><p><strong>locale</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – user’s language</p></li>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(&lt;class ‘str’&gt;, &lt;class ‘telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup’&gt;)</p>
+<dd class="field-even"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">InlineKeyboardMarkup</span></code>)</p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>message_text and InlineKeyboardMarkup to use</p>
@@ -398,7 +434,7 @@ Executes the query and returns the text to send to the user</p>
 
 </section>
 <section id="module-module.commands.gdrive">
-<span id="gdrive"></span><h2>gdrive<a class="headerlink" href="#module-module.commands.gdrive" title="Permalink to this headline"></a></h2>
+<span id="gdrive"></span><h2>gdrive<a class="headerlink" href="#module-module.commands.gdrive" title="Permalink to this heading"></a></h2>
 <p>/drive command</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="module.commands.gdrive.drive">
@@ -411,6 +447,9 @@ Lets the user navigate the drive folders, if he has the permissions</p>
 <li><p><strong>update</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Update</span></code>) – update event</p></li>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -426,6 +465,9 @@ Allows the user to navigate in the google drive and download files</p>
 <li><p><strong>update</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Update</span></code>) – update event</p></li>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -451,9 +493,19 @@ Generates the InlineKeyboard that allows the user to navigate among the files in
 </dl>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="module.commands.gdrive.get_gdrive_interface">
+<span class="sig-prename descclassname"><span class="pre">module.commands.gdrive.</span></span><span class="sig-name descname"><span class="pre">get_gdrive_interface</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.gdrive.get_gdrive_interface" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">GoogleDrive</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="module-module.commands.help">
-<span id="help"></span><h2>help<a class="headerlink" href="#module-module.commands.help" title="Permalink to this headline"></a></h2>
+<span id="help"></span><h2>help<a class="headerlink" href="#module-module.commands.help" title="Permalink to this heading"></a></h2>
 <p>/help command</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="module.commands.help.help_back_to_menu">
@@ -468,6 +520,9 @@ Allows the user to return back to the command list</p>
 <li><p><strong>chat_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the chat the command was invoked from</p></li>
 <li><p><strong>message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the help message</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -484,6 +539,9 @@ Shows all the actions supported by the bot</p>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 <li><p><strong>edit</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – bool flag that affects how the message should be handled</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -502,6 +560,9 @@ Lists to the user the commands related to the department or the CDL</p>
 <li><p><strong>message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the help message</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -518,6 +579,9 @@ Lists to the user the commands related to the ERSU</p>
 <li><p><strong>chat_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the chat the command was invoked from</p></li>
 <li><p><strong>message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the help message</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -536,6 +600,9 @@ Lists to the user the commands related to the miscellaneous stuff</p>
 <li><p><strong>message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the help message</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -552,6 +619,9 @@ Lists to the user the commands related to the other’s project and acknowledgem
 <li><p><strong>chat_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the chat the command was invoked from</p></li>
 <li><p><strong>message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the help message</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -570,6 +640,9 @@ Allows the user to select the department</p>
 <li><p><strong>message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the help message</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -587,21 +660,27 @@ Lists to the user the commands related to the secretariats’ office hours</p>
 <li><p><strong>message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the help message</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
 </section>
 <section id="module-module.commands.lezioni">
-<span id="lezioni"></span><h2>lezioni<a class="headerlink" href="#module-module.commands.lezioni" title="Permalink to this headline"></a></h2>
+<span id="lezioni"></span><h2>lezioni<a class="headerlink" href="#module-module.commands.lezioni" title="Permalink to this heading"></a></h2>
 <p>/lezioni command</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="module.commands.lezioni.generate_lezioni_text">
-<span class="sig-prename descclassname"><span class="pre">module.commands.lezioni.</span></span><span class="sig-name descname"><span class="pre">generate_lezioni_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.lezioni.generate_lezioni_text" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">module.commands.lezioni.</span></span><span class="sig-name descname"><span class="pre">generate_lezioni_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.lezioni.generate_lezioni_text" title="Permalink to this definition"></a></dt>
 <dd><p>Called by <a class="reference internal" href="#module.commands.lezioni.lezioni" title="module.commands.lezioni.lezioni"><code class="xref py py-meth docutils literal notranslate"><span class="pre">lezioni()</span></code></a> after the search button in the /lezioni command has been pressed.
 Executes the query and returns the text to send to the user</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>user_dict</strong> – dictionary that stores the user selected parameters to use in the query</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>locale</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – user’s language</p></li>
+<li><p><strong>user_dict</strong> – dictionary that stores the user selected parameters to use in the query</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
@@ -614,12 +693,12 @@ Executes the query and returns the text to send to the user</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="module.commands.lezioni.get_lezioni_text_InLineKeyboard">
-<span class="sig-prename descclassname"><span class="pre">module.commands.lezioni.</span></span><span class="sig-name descname"><span class="pre">get_lezioni_text_InLineKeyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.lezioni.get_lezioni_text_InLineKeyboard" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">module.commands.lezioni.</span></span><span class="sig-name descname"><span class="pre">get_lezioni_text_InLineKeyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.lezioni.get_lezioni_text_InLineKeyboard" title="Permalink to this definition"></a></dt>
 <dd><p>Generates the text and the InlineKeyboard for the /lezioni command, based on the current parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>update</strong> – update event</p></li>
+<li><p><strong>locale</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – user’s language</p></li>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
@@ -644,6 +723,9 @@ Shows the options available to execute a lesson query.</p>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -660,6 +742,9 @@ Allows the user to choose an year among the ones proposed</p>
 <li><p><strong>chat_id</strong> – id of the chat of the user</p></li>
 <li><p><strong>message_id</strong> – id of the sub-menu message</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -678,6 +763,9 @@ Allows the user to choose a day among the ones proposed</p>
 <li><p><strong>message_id</strong> – id of the sub-menu message</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -694,6 +782,9 @@ Allows the user to write the subject they want to search for</p>
 <li><p><strong>chat_id</strong> – id of the chat of the user</p></li>
 <li><p><strong>message_id</strong> – id of the sub-menu message</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -715,6 +806,9 @@ The action will change depending on the button:</p>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -730,21 +824,27 @@ Allows the user to input the wanted subject, in the format [Nn]ome: &lt;insegnam
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
 </section>
 <section id="module-module.commands.professori">
-<span id="professori"></span><h2>professori<a class="headerlink" href="#module-module.commands.professori" title="Permalink to this headline"></a></h2>
+<span id="professori"></span><h2>professori<a class="headerlink" href="#module-module.commands.professori" title="Permalink to this heading"></a></h2>
 <p>/prof command</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="module.commands.professori.generate_prof_text">
-<span class="sig-prename descclassname"><span class="pre">module.commands.professori.</span></span><span class="sig-name descname"><span class="pre">generate_prof_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.professori.generate_prof_text" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">module.commands.professori.</span></span><span class="sig-name descname"><span class="pre">generate_prof_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.professori.generate_prof_text" title="Permalink to this definition"></a></dt>
 <dd><p>Called from the <a class="reference internal" href="#module.commands.professori.prof" title="module.commands.professori.prof"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prof()</span></code></a> method.
 Executes the query and returns the text to send to the user</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>names</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>) – list of args passed to the context</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>locale</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – user’s language</p></li>
+<li><p><strong>names</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>) – list of args passed to the context</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
@@ -768,27 +868,63 @@ Shows all the professors that match the request</p>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
 </section>
 <section id="module-module.commands.regolamento_didattico">
-<span id="regolamento-didattico"></span><h2>regolamento_didattico<a class="headerlink" href="#module-module.commands.regolamento_didattico" title="Permalink to this headline"></a></h2>
+<span id="regolamento-didattico"></span><h2>regolamento_didattico<a class="headerlink" href="#module-module.commands.regolamento_didattico" title="Permalink to this heading"></a></h2>
 <p>/regolamentodidattico command</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="module.commands.regolamento_didattico.get_reg_keyboard">
-<span class="sig-prename descclassname"><span class="pre">module.commands.regolamento_didattico.</span></span><span class="sig-name descname"><span class="pre">get_reg_keyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reg_doc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.regolamento_didattico.get_reg_keyboard" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="module.commands.regolamento_didattico.cdl_handler">
+<span class="sig-prename descclassname"><span class="pre">module.commands.regolamento_didattico.</span></span><span class="sig-name descname"><span class="pre">cdl_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.regolamento_didattico.cdl_handler" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="module.commands.regolamento_didattico.get_cdl_keyboard">
+<span class="sig-prename descclassname"><span class="pre">module.commands.regolamento_didattico.</span></span><span class="sig-name descname"><span class="pre">get_cdl_keyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_doc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.regolamento_didattico.get_cdl_keyboard" title="Permalink to this definition"></a></dt>
 <dd><p>Called by <a class="reference internal" href="#module.commands.regolamento_didattico.regolamentodidattico" title="module.commands.regolamento_didattico.regolamentodidattico"><code class="xref py py-meth docutils literal notranslate"><span class="pre">regolamentodidattico()</span></code></a> and <a class="reference internal" href="#module.commands.regolamento_didattico.regolamentodidattico_handler" title="module.commands.regolamento_didattico.regolamentodidattico_handler"><code class="xref py py-meth docutils literal notranslate"><span class="pre">regolamentodidattico_handler()</span></code></a>.
 Generates the whole list of rulebooks to append as an InlineKeyboard</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>reg_doc</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]) – rulebooks to show</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>locale</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – the user language</p></li>
+<li><p><strong>reg_doc</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]) – rulebooks to show</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">InlineKeyboardMarkup</span></code></p>
 </dd>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>list of rulebooks</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="module.commands.regolamento_didattico.get_inf_keyboard">
+<span class="sig-prename descclassname"><span class="pre">module.commands.regolamento_didattico.</span></span><span class="sig-name descname"><span class="pre">get_inf_keyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.regolamento_didattico.get_inf_keyboard" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">InlineKeyboardMarkup</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="module.commands.regolamento_didattico.get_mat_keyboard">
+<span class="sig-prename descclassname"><span class="pre">module.commands.regolamento_didattico.</span></span><span class="sig-name descname"><span class="pre">get_mat_keyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.regolamento_didattico.get_mat_keyboard" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">InlineKeyboardMarkup</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -804,6 +940,9 @@ Shows a menu from with the user can choose between (triennale | magistrale)</p>
 <li><p><strong>update</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Update</span></code>) – update event</p></li>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -821,6 +960,9 @@ Allows the used to navigate between the rulebooks</p>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -836,12 +978,15 @@ Sends said rulebook to the user.</p>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
 </section>
 <section id="module-module.commands.report">
-<span id="report"></span><h2>report<a class="headerlink" href="#module-module.commands.report" title="Permalink to this headline"></a></h2>
+<span id="report"></span><h2>report<a class="headerlink" href="#module-module.commands.report" title="Permalink to this heading"></a></h2>
 <p>/report command</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="module.commands.report.report">
@@ -856,16 +1001,19 @@ Allows the user to report something to the administrators</p>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
 </section>
 <section id="module-module.commands.start">
-<span id="start"></span><h2>start<a class="headerlink" href="#module-module.commands.start" title="Permalink to this headline"></a></h2>
+<span id="start"></span><h2>start<a class="headerlink" href="#module-module.commands.start" title="Permalink to this heading"></a></h2>
 <p>/start command</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="module.commands.start.get_help_keyboard">
-<span class="sig-prename descclassname"><span class="pre">module.commands.start.</span></span><span class="sig-name descname"><span class="pre">get_help_keyboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.start.get_help_keyboard" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">module.commands.start.</span></span><span class="sig-name descname"><span class="pre">get_help_keyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#module.commands.start.get_help_keyboard" title="Permalink to this definition"></a></dt>
 <dd><p>Generates the reply keyboard shown at the bottom of the screen</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -889,12 +1037,15 @@ Sends a welcome message</p>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
 </section>
 <section id="module-module.commands.stats">
-<span id="stats"></span><h2>stats<a class="headerlink" href="#module-module.commands.stats" title="Permalink to this headline"></a></h2>
+<span id="stats"></span><h2>stats<a class="headerlink" href="#module-module.commands.stats" title="Permalink to this heading"></a></h2>
 <p>/stats command</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="module.commands.stats.send_graph">
@@ -908,6 +1059,9 @@ Generates a graph and sends it to the user</p>
 <li><p><strong>bot</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Bot</span></code>) – telegram bot</p></li>
 <li><p><strong>chat_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the chat</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -925,6 +1079,9 @@ Shows the history of all the commands requested to the bot in the last ‘days�
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -941,6 +1098,9 @@ Generates the requested stats, both with text and graph</p>
 <li><p><strong>days</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – number of days to consider. Defaults to 0.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -955,6 +1115,9 @@ Shows the history of all the commands requested to the bot</p>
 <li><p><strong>update</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Update</span></code>) – update event</p></li>
 <li><p><strong>context</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackContext</span></code>) – context passed by the handler</p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
