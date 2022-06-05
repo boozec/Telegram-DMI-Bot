@@ -1,3 +1,5 @@
+from typing import Optional
+
 import yaml
 from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
@@ -7,25 +9,28 @@ from telegram.ext import CallbackContext
 from telegram.error import BadRequest
 
 from module.utils.drive_contribute_utils import delete_drive_permission_job
+from module.data.vars import TEXT_IDS
+from module.utils.multi_lang_utils import get_locale
 
 with open('config/settings.yaml', 'r') as yaml_config:
     config_map = yaml.load(yaml_config, Loader=yaml.SafeLoader)
 
 
-def drive_contribute(update: Update, context: CallbackContext):
-    args = context.args
-    chat_id = update.message.chat_id
-    first_name = update.message.from_user.first_name
-    username = update.message.from_user.username
+def drive_contribute(update: Update, context: CallbackContext) -> None:
+    args: Optional[list[str]] = context.args
+    chat_id: int = update.message.chat_id
+    first_name: str = update.message.from_user.first_name
+    username: str = update.message.from_user.username
+    locale: str = update.message.from_user.language_code
     if username:
         username = f"@{username}"
     else:
-        username = "Nessuno username"
+        username = get_locale(locale, TEXT_IDS.DRIVE_NO_USERNAME_WARNING_TEXT_ID)
 
     if len(args) < 2:
         context.bot.sendMessage(
             chat_id=chat_id,
-            text="USO: /drive_contribute [e-mail] [motivazione]\n\nESEMPIO: /drive_contribute mario.rossi@gmail.com Vorrei caricare i miei appunti di Fondamenti di Informatica",
+            text=get_locale(locale, TEXT_IDS.DRIVE_USE_TEXT_TEXT_ID),
         )
         return
 
@@ -60,11 +65,11 @@ def drive_contribute(update: Update, context: CallbackContext):
 
         context.bot.sendMessage(
             chat_id=update.message.chat_id,
-            text=f"Hai ottenuto l'accesso in scrittura alla cartella Drive! \n\nPresto ti arriverà un'email di conferma per gli accessi in scrittura e potrai aggiungere appunti nella cartella mediante questo link https://cutt.ly/unict-dmi-drive",
+            text=f'{get_locale(locale, TEXT_IDS.DRIVE_CONFIRM_ACCESS_TEXT_ID)}',
         )
     except (BadRequest, ApiRequestError):
         context.bot.sendMessage(
             chat_id=update.message.chat_id,
-            text=f"Si é verificato un errore durante la validazione dell'email, riprova più tardi o verifica se hai già gli accessi in scrittura alla cartella mediante questo link https://cutt.ly/unict-dmi-drive",
+            text=f'{get_locale(locale, TEXT_IDS.DRIVE_VALIDATION_ERROR_TEXT_ID)}',
         )
 

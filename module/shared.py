@@ -25,12 +25,6 @@ CUSicon = {
     5: "🏊",
 }
 
-# keyboard menu
-HELP = "❔ Help"
-AULARIO = "📆 Aulario"
-CLOUD = "☁️ Cloud"
-SEGNALAZIONE = "📫 Segnalazione Rappresentanti"
-
 
 def send_message(update: Update, context: CallbackContext, messaggio: str):
     """Replies with a message, making sure the maximum lenght text allowed is respected
@@ -96,19 +90,6 @@ def check_log(update: Update, command_name: str, is_query: bool = False):
 
     if config_map['debug']['disable_db'] == 0:
         DbManager.insert_into(table_name="stat_list", values=(command_name, chat_id, date.today()))
-
-    if config_map['debug']['disable_chatid_logs'] == 0:
-        try:
-            with open("logs/chatid.txt", "r+") as r_log:
-                log = r_log.read()
-        except FileNotFoundError:
-            open("logs/chatid.txt", "w+")
-            log = ()
-
-        if str(chat_id) not in log:
-            with open("logs/chatid.txt", "a+") as a_log:
-                a_log.write(f"{chat_id}\n")
-
 
 def get_year_code(month: int, day: int) -> str:
     """Generates the code of the year
