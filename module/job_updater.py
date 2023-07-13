@@ -4,7 +4,7 @@ from module.shared import check_print_old_exams, get_year_code
 from module.data import Exam, Lesson, Professor, TimetableSlot
 
 
-def updater_lep(context: CallbackContext):
+def updater_lep(_: CallbackContext):
     """Called with a set frequence.
     Updates all the scrapables
 
@@ -17,8 +17,6 @@ def updater_lep(context: CallbackContext):
     if check_print_old_exams(year_exam):
         Exam.scrape(f"1{int(year_exam) - 1}")
 
-    Lesson.scrape(f"1{get_year_code(9, 20)}", delete=True)  # aaaa/09/21 (cambio nuovo anno lezioni) data dal quale vengono prelevate le lezioni del nuovo anno
-
     Professor.scrape(delete=True)
-
     TimetableSlot.scrape(delete=True)
+    Lesson.scrape(f"1{get_year_code(9, 20)}", delete=True)  # aaaa/09/21 (cambio nuovo anno lezioni) data dal quale vengono prelevate le lezioni del nuovo anno

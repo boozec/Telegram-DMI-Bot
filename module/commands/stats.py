@@ -6,13 +6,12 @@ import matplotlib.pyplot as plt
 from telegram import Bot, Update
 from telegram.ext import CallbackContext
 from module.data import DbManager
+from module.data.vars import EASTER_EGG
 
 warnings.filterwarnings("ignore", category=UserWarning, message='^Starting a Matplotlib')
 
-EASTER_EGG = ("leiCheNePensaSignorina", "smonta_portoni", "santino", "bladrim", "prof_sticker")
 
-
-def stats(update: Update, context: CallbackContext):
+def stats(update: Update, context: CallbackContext) -> None:
     """Called by the /stats command.
     Use: /stats [days]
     Shows the history of all the commands requested to the bot in the last 'days'. Defaults to 30.
@@ -30,7 +29,7 @@ def stats(update: Update, context: CallbackContext):
     stats_gen(update, context, days)
 
 
-def stats_tot(update: Update, context: CallbackContext):
+def stats_tot(update: Update, context: CallbackContext) -> None:
     """Called by the /stats_tot command.
     Shows the history of all the commands requested to the bot
 
@@ -41,7 +40,7 @@ def stats_tot(update: Update, context: CallbackContext):
     stats_gen(update, context)
 
 
-def stats_gen(update: Update, context: CallbackContext, days: int = 0):
+def stats_gen(update: Update, context: CallbackContext, days: int = 0) -> None:
     """Called by :meth:`stats` or :meth:`stats_tot`.
     Generates the requested stats, both with text and graph
 
@@ -69,7 +68,7 @@ def stats_gen(update: Update, context: CallbackContext, days: int = 0):
     send_graph(rows, context.bot, chat_id)
 
 
-def send_graph(rows: list, bot: Bot, chat_id: int):
+def send_graph(rows: list, bot: Bot, chat_id: int) -> None:
     """Called by :meth:`stats_gen`.
     Generates a graph and sends it to the user
 

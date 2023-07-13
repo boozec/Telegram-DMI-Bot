@@ -2,10 +2,10 @@
 
 **Telegram-DMI-Bot** is the platform that powers **@DMI_bot**, a Telegram bot aided at helping students find informations about professors, classes' schedules, administration's office hours and more.
 
-### Using the live version
+## Using the live version
 
 The bot is live on Telegram with the username [@DMI_Bot](https://telegram.me/DMI_Bot).
-Send **'/start'** to start it, **'/help'** to see a list of commands.
+Send **`/start`** to start it, **`/help`** to see a list of commands.
 
 Please note that the commands and their answers are in Italian.
 
@@ -37,19 +37,7 @@ _(If you don't have a token, message Telegram's [@BotFather](http://telegram.me/
 - python-pip3
 - language-pack-it
 
-#### To install with _pip3_
-
-- python-telegram-bot==12.8
-- pydrive
-- requests
-- beautifulsoup4
-- python-gitlab
-- matplotlib
-- pandas
-- pillow
-- lxml
-
-To install all the requirements you can run:
+**To install all the requirements you can run**:
 
 ```bash
 pip3 install -r requirements.txt
@@ -60,30 +48,35 @@ pip3 install -r requirements.txt
 ### docker-compose(recommended)
 
 ```yaml
-version: '2'
+version: "2"
 services:
-    dmibot:
-        image: unictdmi/dmibot
-        container_name: dmibot
-        volumes:
-            - </path/to/settings.yaml>:/dmibot/config/settings.yaml
-            - </path/to/DMI_DB.db>:/dmibot/data/DMI_DB.db
+  dmibot:
+    image: ghcr.io/unict-dmi/telegram-dmi-bot
+    container_name: dmibot
+    volumes:
+      - </path/to/settings.yaml>:/dmibot/config/settings.yaml
+      - </path/to/DMI_DB.db>:/dmibot/data/DMI_DB.db
+      - </path/to/drive_credentials.json>:/dmibot/config/drive_credentials.json
 ```
 
 ### docker cli
+
 ```bash
-$ docker run -v </path/to/settings.yaml>:/dmibot/config/settings.yaml -v </path/to/DMI_DB.db>:/dmibot/data/DMI_DB.db -t unictdmi/dmibot
+docker run -v </path/to/settings.yaml>:/dmibot/config/settings.yaml -v </path/to/DMI_DB.db>:/dmibot/data/DMI_DB.db -v </path/to/drive_credentials.json>:/dmibot/config/drive_credentials.json -t unictdmi/dmibot
 ```
 
 ### Parameter
+
 Container images are configured using parameters passed at runtime (such as those above). These parameters are separated by a colon and indicate \<external>:\<internal> respectively.
 
-| Parameter | Function |
-| :----: | --- |
-| `-v /dmibot/config/settings.yaml` | configurations file |
-| `-v /dmibot/data/DMI_DB.db` | database |
+|                 Parameter                  | Function            |
+| :----------------------------------------: | ------------------- |
+|     `-v /dmibot/config/settings.yaml`      | configurations file |
+|        `-v /dmibot/data/DMI_DB.db`         | database            |
+| `-v /dmibot/config/drive_credentials.json` | drive credentials   |
 
 ### Building locally
+
 ```bash
 git clone https://github.com/UNICT-DMI/Telegram-DMI-Bot.git
 cd Telegram-DMI-Bot
@@ -119,17 +112,25 @@ You can enable these commands setting **disable_drive = 0** and configuring the 
 
 ### Testing
 
-#### To install with _pip3_
-
-- pytest
-- pytest-asyncio
-- telethon
-
-To install all the test requirements you can run:
+**To install all the test requirements you can run**:
 
 ```bash
 pip3 install -r requirements_dev.txt
 ```
+
+Start **unit tests**:
+
+```bash
+pytest tests/unit/
+```
+
+If you want to check also the code coverage report through an HTML format use:
+
+```bash
+pytest --cov . tests/unit/ --cov-report=html
+```
+
+To run the end-to-end tests read the following steps below.
 
 Steps:
 
@@ -156,14 +157,16 @@ python3 conftest.py .
 ```
 
 - Follow the procedure and copy the session value it provides in the settings file in "test:session". You can then delete the `conftest.py` you just used, you won't need it again
-- Edit the remaining values in the settings file as you like
+- Edit `tag` value with the username of the test bot you will use.
+- Edit `representatives_group` value with the `user_id` or `group_id` where you want receive reports from **/report** command.
+- Edit `dev_group_chatid` value with the `user_id` or `group_id` where you want receive tracebacks.
 
 **Check [here](https://dev.to/blueset/how-to-write-integration-tests-for-a-telegram-bot-4c0e) if you want to have more information on the steps above**
 
-Start tests:
+Start **end-to-end tests**:
 
 ```bash
-pytest
+pytest tests/e2e/
 ```
 
 ## :books: Documentation

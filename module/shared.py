@@ -12,7 +12,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # config
-with open('config/settings.yaml', 'r') as yaml_config:
+with open('config/settings.yaml', 'r', encoding='utf-8') as yaml_config:
     config_map = yaml.load(yaml_config, Loader=yaml.SafeLoader)
 
 # Icons
@@ -24,12 +24,6 @@ CUSicon = {
     4: "🏐",
     5: "🏊",
 }
-
-# keyboard menu
-HELP = "❔ Help"
-AULARIO = "📆 Aulario"
-CLOUD = "☁️ Cloud"
-SEGNALAZIONE = "📫 Segnalazione Rappresentanti"
 
 
 def send_message(update: Update, context: CallbackContext, messaggio: str):
@@ -97,19 +91,6 @@ def check_log(update: Update, command_name: str, is_query: bool = False):
     if config_map['debug']['disable_db'] == 0:
         DbManager.insert_into(table_name="stat_list", values=(command_name, chat_id, date.today()))
 
-    if config_map['debug']['disable_chatid_logs'] == 0:
-        try:
-            with open("logs/chatid.txt", "r+") as r_log:
-                log = r_log.read()
-        except FileNotFoundError:
-            open("logs/chatid.txt", "w+")
-            log = ()
-
-        if str(chat_id) not in log:
-            with open("logs/chatid.txt", "a+") as a_log:
-                a_log.write(f"{chat_id}\n")
-
-
 def get_year_code(month: int, day: int) -> str:
     """Generates the code of the year
 
@@ -139,6 +120,5 @@ def check_print_old_exams(year_exam: str) -> bool:
     """
     date_time = datetime.now().astimezone()
     ckdate = datetime(year=date_time.year, month=12, day=23).astimezone()  # aaaa/12/24 data dal quale vengono prelevati solo gli esami del nuovo anno
-    if year_exam != str(date_time.year)[-2:] and date_time < ckdate:
-        return True
-    return False
+
+    return year_exam != str(date_time.year)[-2:] and date_time < ckdate
